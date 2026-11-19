@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# Documentation and Notebooks
+docs/
+notebooks/
+*.md
+
+# Large Raw Datasets and Archives
+dataset/
+data/raw/
+*.zip
+*.tar.gz
+*.csv
+
+# Python caches and environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+env/
+
+# Testing and Coverage
+tests/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local MLflow runs
+mlruns/
+mlflow.db
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ecommerce-recommendation-api
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    region: oregon
+    numInstances: 1
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: OPENBLAS_NUM_THREADS
+        value: 1
+      - key: LOG_LEVEL
+        value: INFO
+      - key: PYTHONUNBUFFERED
+        value: 1

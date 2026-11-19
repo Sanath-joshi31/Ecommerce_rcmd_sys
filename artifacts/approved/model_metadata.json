@@ -1,0 +1,18 @@
+{
+  "model_name": "Retailrocket-Hybrid-Recommender",
+  "model_version": "1.1153.0",
+  "approval_timestamp": "2026-11-19T20:45:53.235736+00:00",
+  "approval_status": "APPROVED",
+  "retraining_trigger": "Data Drift Exceeded Critical Threshold",
+  "selected_architecture": "Hybrid (ALS + Content-Based TF-IDF + Popularity Baseline)",
+  "performance_metrics": {
+    "recall@10": 0.01271,
+    "precision@10": 0.0031,
+    "ndcg@10": 0.00826,
+    "map@10": 0.00548,
+    "coverage@10_pct": 2.255,
+    "relative_lift_over_baseline_pct": 213.83,
+    "avg_latency_ms": 4.95
+  },
+  "retrain_duration_seconds": 0.67
+}

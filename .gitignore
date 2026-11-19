@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDE and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Datasets and Archives (Never commit raw data to Git)
+data/raw/*
+!data/raw/.gitkeep
+dataset/
+*.zip
+*.tar.gz
+*.csv
+
+# Processed Data and Large Artifacts
+data/processed/*
+!data/processed/.gitkeep
+artifacts/models/*
+!artifacts/models/.gitkeep
+artifacts/mappings/*
+!artifacts/mappings/.gitkeep
+artifacts/approved/*.pkl
+artifacts/approved/*.parquet
+!artifacts/approved/model_metadata.json
+
+# MLflow Tracking Database and File Store
+mlruns/
+mlflow.db
+.trash/
+
+# Pytest and Testing Cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment Variables and Secrets
+.env
+.env.*
+!.env.example

@@ -1,0 +1,64 @@
+# Central Configuration: E-Commerce Product Recommendation System
+
+project:
+  name: "ecommerce-recommendation-mlops"
+  version: "1.0.0"
+  random_seed: 42
+
+paths:
+  raw_data_dir: "dataset" # Points to the local dataset folder containing raw CSVs
+  processed_data_dir: "data/processed"
+  artifacts_dir: "artifacts"
+  models_dir: "artifacts/models"
+  mappings_dir: "artifacts/mappings"
+  metrics_dir: "artifacts/metrics"
+
+data_processing:
+  event_weights:
+    view: 1.0
+    addtocart: 3.0
+    transaction: 5.0
+  splits:
+    train_ratio: 0.70
+    val_ratio: 0.15
+    test_ratio: 0.15
+  min_interactions_per_user: 2 # Filter extreme one-off noise for matrix factorization if needed
+  min_interactions_per_item: 2
+
+models:
+  popularity:
+    default_top_n: 20
+  
+  als:
+    factors: 64
+    regularization: 0.1
+    iterations: 20
+    random_state: 42
+    use_gpu: false
+  
+  content_based:
+    max_features: 5000
+    min_df: 2
+    top_similar_items: 20
+
+  hybrid:
+    collaborative_weight: 0.5
+    content_weight: 0.3
+    popularity_weight: 0.2
+    filter_already_interacted: true
+
+evaluation:
+  k_values: [5, 10, 20]
+  target_metric: "recall@10"
+  min_relative_lift_over_baseline: 0.30
+
+mlflow:
+  experiment_name: "Retailrocket-Recommendations"
+  tracking_uri: "sqlite:///mlflow.db"
+  artifact_location: "artifacts/mlruns"
+
+serving:
+  host: "0.0.0.0"
+  port: 8000
+  default_top_n: 10
+  max_top_n: 100

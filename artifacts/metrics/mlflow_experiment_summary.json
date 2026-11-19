@@ -1,0 +1,30 @@
+{
+  "Popularity-Baseline": {
+    "run_id": "5e4a4ac843cb47c083eff00aee102319",
+    "artifact_uri": "d:\\projects & datasets\\Ecommerce_rcmd_sys\\artifacts\\mlruns/5e4a4ac843cb47c083eff00aee102319/artifacts",
+    "recall@10": 0.00405,
+    "coverage@10_pct": 0.005,
+    "avg_latency_ms": 0.02
+  },
+  "Collaborative-Filtering-ALS": {
+    "run_id": "1f7b80fbd73f470686cb82e0b6d66b61",
+    "artifact_uri": "d:\\projects & datasets\\Ecommerce_rcmd_sys\\artifacts\\mlruns/1f7b80fbd73f470686cb82e0b6d66b61/artifacts",
+    "recall@10": 0.0154,
+    "coverage@10_pct": 0.534,
+    "avg_latency_ms": 1.75
+  },
+  "Content-Based-TFIDF": {
+    "run_id": "093bd2fb912b4778beb61e43ddb6e8fa",
+    "artifact_uri": "d:\\projects & datasets\\Ecommerce_rcmd_sys\\artifacts\\mlruns/093bd2fb912b4778beb61e43ddb6e8fa/artifacts",
+    "recall@10": 0.00028,
+    "coverage@10_pct": 4.215,
+    "avg_latency_ms": 2.68
+  },
+  "Hybrid-Engine-Balanced": {
+    "run_id": "9682a77ff58f43d68272de6a4c115a23",
+    "artifact_uri": "d:\\projects & datasets\\Ecommerce_rcmd_sys\\artifacts\\mlruns/9682a77ff58f43d68272de6a4c115a23/artifacts",
+    "recall@10": 0.01271,
+    "coverage@10_pct": 2.255,
+    "avg_latency_ms": 4.95
+  }
+}

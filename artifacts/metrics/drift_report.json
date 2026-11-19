@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-11-19T20:44:00.730488+00:00",
+  "drift_level": "SIGNIFICANT_DRIFT",
+  "recommendation": "AUTOMATED_RETRAINING_TRIGGERED",
+  "metrics": {
+    "interaction_weight_psi": 0.0,
+    "cold_start_visitor_pct": 94.08,
+    "new_unindexed_item_pct": 20.9,
+    "total_baseline_records": 1928948,
+    "total_production_records": 413347
+  },
+  "event_distribution_shift": {
+    "view": {
+      "baseline_pct": 96.74,
+      "production_pct": 96.6,
+      "diff_pct_points": -0.13
+    },
+    "addtocart": {
+      "baseline_pct": 2.45,
+      "production_pct": 2.59,
+      "diff_pct_points": 0.13
+    },
+    "transaction": {
+      "baseline_pct": 0.81,
+      "production_pct": 0.81,
+      "diff_pct_points": 0.0
+    }
+  },
+  "active_retrain_triggers": [
+    "Cold-Start Visitor Ratio (94.1%) exceeds threshold (60%)",
+    "New Unindexed Items Ratio (20.9%) exceeds threshold (15%)"
+  ],
+  "sla_thresholds": {
+    "psi_warning": 0.1,
+    "psi_critical_retrain": 0.25,
+    "cold_start_warning_pct": 40.0,
+    "cold_start_critical_pct": 60.0,
+    "new_item_critical_pct": 15.0
+  }
+}

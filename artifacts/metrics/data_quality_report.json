@@ -1,0 +1,72 @@
+{
+  "execution_duration_sec": 13.54,
+  "raw_files": {
+    "events.csv": {
+      "exists": true,
+      "size_mb": 89.87,
+      "path": "D:\\projects & datasets\\Ecommerce_rcmd_sys\\dataset\\events.csv"
+    },
+    "category_tree.csv": {
+      "exists": true,
+      "size_mb": 0.01,
+      "path": "D:\\projects & datasets\\Ecommerce_rcmd_sys\\dataset\\category_tree.csv"
+    },
+    "item_properties_part1.csv": {
+      "exists": true,
+      "size_mb": 461.88,
+      "path": "D:\\projects & datasets\\Ecommerce_rcmd_sys\\dataset\\item_properties_part1.csv"
+    },
+    "item_properties_part2.csv": {
+      "exists": true,
+      "size_mb": 389.99,
+      "path": "D:\\projects & datasets\\Ecommerce_rcmd_sys\\dataset\\item_properties_part2.csv"
+    }
+  },
+  "raw_validation": {
+    "total_rows": 2756101,
+    "missing_timestamp": 0,
+    "missing_visitorid": 0,
+    "missing_itemid": 0,
+    "missing_event": 0,
+    "invalid_event_types": 0,
+    "transactions_missing_id": 0,
+    "exact_duplicates": 460,
+    "status": "PASS"
+  },
+  "cleaning": {
+    "initial_rows": 2756101,
+    "final_rows": 2755641,
+    "dropped_missing_keys": 0,
+    "dropped_invalid_events": 0,
+    "dropped_exact_duplicates": 460,
+    "retention_rate_pct": 99.9833,
+    "min_datetime": "2015-05-03 03:00:04.384000+00:00",
+    "max_datetime": "2015-09-18 02:59:47.788000+00:00",
+    "unique_visitors": 1407580,
+    "unique_items": 235061
+  },
+  "splitting": {
+    "train_rows": 1928948,
+    "val_rows": 413346,
+    "test_rows": 413347,
+    "train_pct": 70.0,
+    "val_pct": 15.0,
+    "test_pct": 15.0,
+    "train_end_time": "2015-08-02 23:29:02.354000+00:00",
+    "val_start_time": "2015-08-02 23:29:03.291000+00:00",
+    "val_end_time": "2015-08-25 22:30:59.619000+00:00",
+    "test_start_time": "2015-08-25 22:31:01.629000+00:00",
+    "test_end_time": "2015-09-18 02:59:47.788000+00:00",
+    "train_unique_users": 978906,
+    "train_unique_items": 200974,
+    "val_unique_users": 234715,
+    "test_unique_users": 233728
+  },
+  "training_matrix": {
+    "num_users": 978906,
+    "num_items": 200974,
+    "non_zeros": 1496538,
+    "sparsity_pct": 99.9992,
+    "density_pct": 0.000761
+  }
+}
