@@ -6,7 +6,12 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 import numpy as np
 from scipy.sparse import csr_matrix
-import implicit
+
+try:
+    import implicit
+except (ImportError, OSError) as e:
+    implicit = None
+    logging.getLogger(__name__).warning("implicit C-library could not be imported (%s); collaborative model in fallback mode.", e)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)

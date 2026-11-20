@@ -9,9 +9,10 @@ RUN groupadd -g 10001 appgroup && \
 
 WORKDIR /app
 
-# Install runtime utilities (curl for container healthcheck probe)
+# Install runtime utilities (curl for container healthcheck probe, libgomp1 for OpenMP in implicit/scipy)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install python dependencies directly from PyPI binary wheels
@@ -32,6 +33,8 @@ COPY --chown=appuser:appgroup configs/ ./configs/
 COPY --chown=appuser:appgroup src/ ./src/
 COPY --chown=appuser:appgroup app/ ./app/
 COPY --chown=appuser:appgroup artifacts/approved/ ./artifacts/approved/
+
+RUN chown -R appuser:appgroup /app
 
 # Switch to unprivileged non-root user
 USER appuser

@@ -144,20 +144,20 @@ jobs:
 
       - name: Run Container Health & Inference Probes
         run: |
-          # 1. Health Probe with connection retry
-          curl --fail --retry 10 --retry-delay 3 --retry-connrefused http://localhost:8000/health
+          # 1. Health Probe with connection retry using explicit IPv4 (127.0.0.1)
+          curl --fail --retry 10 --retry-delay 3 --retry-connrefused http://127.0.0.1:8000/health
           echo -e "\n[SUCCESS] /health probe passed."
 
           # 2. Root Metadata Probe
-          curl --fail --retry 5 --retry-connrefused http://localhost:8000/
+          curl --fail --retry 5 --retry-connrefused http://127.0.0.1:8000/
           echo -e "\n[SUCCESS] / root metadata probe passed."
 
           # 3. Popularity Endpoint Probe
-          curl --fail --retry 5 --retry-connrefused "http://localhost:8000/popular?top_n=5"
+          curl --fail --retry 5 --retry-connrefused "http://127.0.0.1:8000/popular?top_n=5"
           echo -e "\n[SUCCESS] /popular endpoint probe passed."
 
           # 4. Recommendation Inference Probe (Cold Start Fallback)
-          curl --fail --retry 5 --retry-connrefused "http://localhost:8000/recommend/999999?top_n=5"
+          curl --fail --retry 5 --retry-connrefused "http://127.0.0.1:8000/recommend/999999?top_n=5"
           echo -e "\n[SUCCESS] /recommend cold-start probe passed."
 
       - name: Container Cleanup
