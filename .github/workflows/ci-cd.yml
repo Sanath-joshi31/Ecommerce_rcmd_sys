@@ -137,8 +137,9 @@ jobs:
       - name: Launch Container in CI Runner
         run: |
           docker run -d --name test-api -p 8000:8000 ecommerce-recommendation-api:ci-test
-          echo "Waiting for container startup and model loading..."
-          sleep 12
+          echo "Waiting for container startup..."
+          sleep 8
+          docker ps -a
           docker logs test-api
 
       - name: Run Container Health & Inference Probes
