@@ -1,19 +1,19 @@
 services:
   - type: web
     name: ecommerce-recommendation-api
-    env: docker
-    dockerfilePath: Dockerfile
-    plan: starter
+    env: python
+    plan: free
     region: oregon
-    numInstances: 1
+    buildCommand: pip install -r requirements-serving.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     autoDeploy: true
     envVars:
-      - key: PORT
-        value: 8000
+      - key: PYTHON_VERSION
+        value: "3.11.9"
       - key: OPENBLAS_NUM_THREADS
-        value: 1
+        value: "1"
       - key: LOG_LEVEL
-        value: INFO
+        value: "INFO"
       - key: PYTHONUNBUFFERED
-        value: 1
+        value: "1"

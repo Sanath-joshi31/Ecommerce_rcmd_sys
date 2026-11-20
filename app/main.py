@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
 from app.dashboard import get_dashboard_html
+from app.eda_dashboard import get_eda_dashboard_html
 from app.schemas import (
     HealthResponse,
     PopularResponse,
@@ -80,6 +81,17 @@ async def root():
 async def dashboard():
     """Interactive visual console for testing real-time recommendation inferences."""
     return HTMLResponse(content=get_dashboard_html())
+
+
+@app.get(
+    "/eda",
+    response_class=HTMLResponse,
+    summary="Interactive Exploratory Data Analysis Dashboard",
+    tags=["General"],
+)
+async def eda_dashboard():
+    """Interactive visual EDA dashboard displaying event funnel, temporal split, and matrix sparsity."""
+    return HTMLResponse(content=get_eda_dashboard_html())
 
 
 @app.get(

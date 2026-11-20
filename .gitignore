@@ -56,6 +56,7 @@ artifacts/mappings/*
 artifacts/approved/*.pkl
 artifacts/approved/*.parquet
 !artifacts/approved/model_metadata.json
+!artifacts/approved/popularity_features.parquet
 
 # MLflow Tracking Database and File Store
 mlruns/

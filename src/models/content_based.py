@@ -86,6 +86,10 @@ class ContentBasedRecommender:
 
     def cache_user_history(self, user_item_df: pd.DataFrame):
         """Cache user interaction history for low-latency recommendation queries."""
+        # Pre-filter to only items present in the fitted TF-IDF matrix to eliminate memory exhaustion
+        if self.item_to_idx is not None and len(self.item_to_idx) > 0:
+            user_item_df = user_item_df[user_item_df["itemid"].isin(self.item_to_idx)]
+
         logger.info("Caching user history for content recommendations across %d records...", len(user_item_df))
         history: Dict[int, Dict[int, float]] = {}
         for row in user_item_df[["visitorid", "itemid", "total_weight"]].itertuples(index=False):

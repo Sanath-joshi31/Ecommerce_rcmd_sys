@@ -31,6 +31,9 @@ def get_dashboard_html() -> str:
         </div>
       </div>
       <div class="flex items-center gap-3 text-xs">
+        <a href="/eda" class="px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition font-medium flex items-center gap-1.5 shadow-sm">
+          <span>📊 View EDA Visualizations</span>
+        </a>
         <div id="health-indicator" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-subtle"></span>
           <span id="health-text" class="font-medium font-mono">HEALTHY</span>
