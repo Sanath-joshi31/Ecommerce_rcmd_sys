@@ -52,7 +52,13 @@ class PopularityRecommender:
 
     def load_from_parquet(self, path: str | Path):
         """Load precomputed popularity features from Parquet file."""
-        pop = pd.read_parquet(path)
+        try:
+            pop = pd.read_parquet(path)
+        except Exception as e:
+            logger.warning("pd.read_parquet failed (%s); falling back to duckdb engine...", e)
+            import duckdb
+            pop = duckdb.read_parquet(str(path)).df()
+
         self.popularity_df = pop
         self.sorted_items = pop["itemid"].tolist()
         self.sorted_scores = pop["popularity_score"].tolist()
